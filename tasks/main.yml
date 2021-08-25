@@ -1,0 +1,10 @@
+---
+# tasks file for create-dir
+- name: Creating folder on remote server
+  file:
+          path: "{{ item.dir_path }}"
+          state: directory
+          owner: "{{ item.dir_owner }}"
+          group: "{{ item.dir_group }}" 
+          mode: "{{ item.dir_mode }}"
+  loop: "{{ dir_inf }}"
